@@ -1,33 +1,76 @@
-// ===== Timer (in seconds) =====
-let timeLeft = 60; // 1 minute
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #a18cd1, #fbc2eb);
+    margin: 0;
+    padding: 20px;
+}
 
-const timerDisplay = document.createElement("h3");
-timerDisplay.style.textAlign = "center";
-timerDisplay.style.color = "red";
-document.body.prepend(timerDisplay);
+/* Container Styling */
+h2 {
+    text-align: center;
+    color: #333;
+}
 
-const form = document.querySelector("form");
+/* Quiz Box */
+form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
 
-// Countdown function
-const countdown = setInterval(() => {
-    timerDisplay.textContent = "Time Left: " + timeLeft + " sec";
+/* Questions */
+p {
+    font-size: 16px;
+    color: #444;
+}
 
-    timeLeft--;
+/* Options */
+input[type="radio"] {
+    margin-right: 10px;
+    margin-top: 5px;
+}
 
-    if (timeLeft < 0) {
-        clearInterval(countdown);
-        alert("Time's up! Quiz will be submitted.");
-        form.submit(); // auto submit
-    }
-}, 1000);
+/* Submit Button */
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #6a5acd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
 
-// ===== Validation before submit =====
-form.addEventListener("submit", function (e) {
-    const totalQuestions = document.querySelectorAll("input[type='radio']").length / 4;
-    const checkedAnswers = document.querySelectorAll("input[type='radio']:checked").length;
+input[type="submit"]:hover {
+    background-color: #483d8b;
+}
 
-    if (checkedAnswers < totalQuestions) {
-        e.preventDefault();
-        alert("Please answer all questions before submitting!");
-    }
-});
+/* Result Page Styling */
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #6a5acd;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align:justify;
+    padding: 10px;
+    background-color: transparent;
+    font-size: 16px;
+    pointer-events: none;
+}
