@@ -39,7 +39,14 @@ $selectedQuestions = array_slice($questions, 0, 10);
 <input type="submit" value="Submit Quiz">
 
 </form>
+<footer class="footer">
+    Name: Neel Sachapara<br>
+    Enrollment No: 240905040060<br>
+    Class: Y<br>
+    Sub: FWD<br>
+    ALA: 1
+</footer>
 
 <script src="script.js"></script>
 </body>
-</html>
+</html>   
